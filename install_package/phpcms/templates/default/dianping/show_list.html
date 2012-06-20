@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv="Content-Type" content="text/html; charset={CHARSET}" />
 <meta http-equiv="X-UA-Compatible" content="IE=7" />
 <title>点评模板</title>
 <link href="{CSS_PATH}reset.css" rel="stylesheet" type="text/css" />
@@ -18,7 +18,7 @@
 {if $data}
 {loop $data $r}
     <div class="opinion-row">
-    	<div class="img-box"> <img height="50" width="54" src="{if $r[username]}{get_memberavatar($r[userid],'1','90')}{else}{IMG_PATH}member/nophoto.gif{/if}" alt="" style="margin-top: 0px;" onerror="this.src='{$phpsso_api_url}/statics/images/member/nophoto.gif'"><p>{if $r['username']}{$r['username']}{else}本站网友{/if} </p></div>
+    	<div class="img-box"> <img height="50" width="54" src="{if $r[username]}{get_memberavatar($r[userid],'1','90')}{else}{IMG_PATH}member/nophoto.gif{/if}" alt="" style="margin-top: 0px;" onerror="this.src='{APP_PATH}/statics/images/member/nophoto.gif'"><p>{if $r['username']}{$r['username']}{else}本站网友{/if} </p></div>
 		<?php $data2 = string2array($r['data']);?>
         <div class="text-box">
         	<div class="opinion-box clear">

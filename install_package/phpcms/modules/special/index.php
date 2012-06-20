@@ -45,6 +45,7 @@ class index {
 		$SEO = seo($siteid, '', $title, $description);
 		$commentid = id_encode('special', $id, $siteid);
 		$template = $info['index_template'] ? $info['index_template'] : 'index';
+		define('STYLE',$info['style']);
 		include template('special', $template);
 	}
 	

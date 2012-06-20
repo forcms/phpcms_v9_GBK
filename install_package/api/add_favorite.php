@@ -19,7 +19,7 @@ if(empty($_GET['title']) || empty($_GET['url'])) {
 	$title = htmlspecialchars($title);
 	$url = safe_replace(urldecode($_GET['url']));
 }
-
+$_GET['callback'] = safe_replace($_GET['callback']);
 //ÅÐ¶ÏÊÇ·ñµÇÂ¼	
 $phpcms_auth = param::get_cookie('auth');
 if($phpcms_auth) {

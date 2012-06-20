@@ -213,6 +213,15 @@ include $this->admin_tpl('header');?>
 	App secret key <input type="text" class="input-text" name="setconfig[qq_skey]" id="qq_skey" size="40" value="<?php echo $qq_skey ?>"/> <a href="http://open.t.qq.com/" target="_blank"><?php echo L('click_register')?></a>
 	</td>
   </tr> 
+  <tr>
+    <th><?php echo L('setting_connect_qqnew')?></th>
+    <td class="y-bg">
+	App I D  &nbsp;<input type="text" class="input-text" name="setconfig[qq_appid]" id="qq_appid" size="20" value="<?php echo $qq_appid;?>"/>
+	App key <input type="text" class="input-text" name="setconfig[qq_appkey]" id="qq_appkey" size="40" value="<?php echo $qq_appkey;?>"/> 
+	<?php echo L('setting_connect_qqcallback')?> <input type="text" class="input-text" name="setconfig[qq_callback]" id="qq_callback" size="40" value="<?php echo $qq_callback;?>"/>
+	<a href="http://connect.qq.com" target="_blank"><?php echo L('click_register')?></a>
+	</td>
+  </tr> 
 
   </table>
 </div>

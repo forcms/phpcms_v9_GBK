@@ -397,7 +397,7 @@ class content extends admin {
 						}
 					} else if (isset($_GET['id']) && $_GET['id']) {
 						$id = intval($_GET['id']);
-						$content_info = $this->db->get_one(array('id'=>$id), 'username');
+						$content_info = $this->db->get_content($catid,$id);
 						$memberinfo = $member_db->get_one(array('username'=>$content_info['username']), 'userid, username');
 						$flag = $catid.'_'.$id;
 						if($setting['presentpoint']>0) {
@@ -406,6 +406,11 @@ class content extends admin {
 						} else {
 							pc_base::load_app_class('spend','pay',0);
 							spend::point($setting['presentpoint'], L('contribute_del_point'), $memberinfo['userid'], $memberinfo['username'], '', '', $flag);
+						}
+						//µ¥ÆªÉóºË£¬Éú³É¾²Ì¬
+						if($setting['content_ishtml'] == '1'){//À¸Ä¿ÓĞ¾²Ì¬ÅäÖÃ
+						$urls = $this->url->show($id, 0, $content_info['catid'], $content_info['inputtime'], '',$content_info,'add');
+						$html->show($urls[1],$urls['data'],0);
 						}
 					}
 				}
