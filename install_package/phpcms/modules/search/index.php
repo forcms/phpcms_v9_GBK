@@ -14,7 +14,8 @@ class index {
 	public function init() {
 		//»ñÈ¡siteid
 		$siteid = isset($_REQUEST['siteid']) && trim($_REQUEST['siteid']) ? intval($_REQUEST['siteid']) : 1;
-		
+		$SEO = seo($siteid);
+
 		//ËÑË÷ÅäÖÃ
 		$search_setting = getcache('search');
 		$setting = $search_setting[$siteid];

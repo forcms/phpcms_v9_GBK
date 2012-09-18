@@ -31,7 +31,10 @@ class param {
 				if(!isset($_GET[$_key])) $_GET[$_key] = $_value;
 			}
 		}
-		if(isset($_GET['page'])) $_GET['page'] = max(intval($_GET['page']),1);
+		if(isset($_GET['page'])) {
+			$_GET['page'] = max(intval($_GET['page']),1);
+			$_GET['page'] = min($_GET['page'],1000000000);
+		}
 		return true;
 	}
 
