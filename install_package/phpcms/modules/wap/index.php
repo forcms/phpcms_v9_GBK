@@ -246,7 +246,7 @@ class index {
 		pc_base::load_app_func('global','comment');	
 		$typeid  = intval($_GET['typeid']);	
 		$GLOBALS['siteid'] = max($this->siteid,1);
-		$commentid = isset($_GET['commentid']) && trim(urldecode($_GET['commentid'])) ? trim(urldecode($_GET['commentid'])) : exit(L('illegal_parameters'));
+		$commentid = isset($_GET['commentid']) && trim(addslashes(urldecode($_GET['commentid']))) ? trim(addslashes(urldecode($_GET['commentid']))) : exit(L('illegal_parameters'));
 		if(!preg_match("/^[a-z0-9_\-]+$/i",$commentid)) exit(L('illegal_parameters'));
 		list($modules, $contentid, $siteid) = decode_commentid($commentid);	
 		list($module, $catid) = explode('_', $modules);
